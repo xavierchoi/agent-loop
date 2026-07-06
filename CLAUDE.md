@@ -1,20 +1,34 @@
-# loop.md — Agent Loops 표준 프로젝트
+# loop.md — Agent Loops Standard Project
 
-AI 에이전트가 선언된 목표를 독립 검증 통과까지 반복하는 `LOOP.md` 표준을 설계하는 프로젝트.
+This project designs and validates **Agent Loops**: a cross-agent markdown standard (`LOOP.md`) for declaring goal-directed, independently-verified, self-refining agent loops. SKILL.md declares *capability*; LOOP.md declares *process* — what goal, until when, judged by what.
 
-## 디렉터리
+## Directory Map
 
-- `spec/SPECIFICATION.md` — 표준 명세 (현재 v0.3 Draft). 이 프로젝트의 최종 산출물. 비판 리뷰 기록은 `spec/reviews/`
-- `wiki/` — **llm-wiki**: 외부 리서치를 구조화해 축적하는 위키. 스펙 설계의 지식 기반
-- `design/` — 설계 문서 (llm-wiki 설계, 루프 메커니즘, UX 시나리오)
-- `research/` — 초기 리서치 원문
+- `spec/SPECIFICATION.md` — the standard (single source of truth; check its header for current version). Review/decision records in `spec/reviews/`
+- `runtime/` — reference runner kit: `looprun/looprun.mjs` (Level 1), `looprun/evolve.mjs` (refinement), demo loop + target. See `runtime/README.md`
+- `skills/loop-authoring/` — Agent Skills-format onboarding skill (the human-friendly entry point)
+- `wiki/` — llm-wiki: accumulated research knowledge. **Consult `wiki/INDEX.md` before spec/research work**; ingest procedure and rules live in `wiki/WIKI.md`
+- `research/` — deep-research reports and `field-runs/` (real-world run analyses + extraction rubric)
+- `design/` — design docs (mechanics, UX scenarios)
+- Remote: private GitHub `xavierchoi/agent-loop` (main)
 
-## 위키 사용법 (모든 세션 공통)
+## Non-Negotiable Principles
 
-- **조회:** 스펙·리서치 관련 작업 전에 `wiki/INDEX.md`를 먼저 읽고, 관련 엔티티 페이지(`wiki/entities/`)를 따라가라. 과거 ingest에서 도출된 결론과 스펙 v0.2 검토 후보가 여기 있다.
-- **Ingest:** 사용자가 소스(URL·논문·영상)를 주면 `wiki/WIKI.md`의 Ingest 절차를 따르라 — 소스 레코드 → 요약 → 엔티티 생성/갱신 → 모순 점검 → INDEX 갱신.
-- **규칙:** `wiki/WIKI.md`가 스키마다. 소스 레코드는 ingest 후 수정 금지, 모든 주장에 출처, 크로스-참조는 `[[엔티티-이름]]`.
+1. **No self-reporting, applied to ourselves.** An artifact's author never certifies it. Spec changes get adversarial critique passes; the runner gets independent audits; claims get verification. This project eats its own dogfood.
+2. **The human owns success criteria.** `goal` and `verify` semantics are owner decisions. Automation may propose; only the owner (xavier) approves changes to what "done" means — in the spec and in this project's own process.
+3. **Structure over intelligence.** Prefer fixing the harness/spec/process over demanding smarter models. Findings from implementation friction are spec input, not annoyances.
+4. **Evidence discipline.** Claims carry confidence tags: 3-vote verified > primary-source collected > vendor self-report > internal n=1 observation. Never present the weaker as the stronger. Negative results are recorded, not hidden.
+5. **Additive spec evolution.** Core stays minimal (5 required fields as of v0.4+; no new required fields). Complexity lives in optional fields and the Evolution extension, and is hidden from humans by tooling (agents author LOOP.md; humans answer interview questions).
 
-## 언어
+## Terminology (Session-Critical)
 
-문서 정본은 한국어 (공개 시 영어판이 canonical, 스펙 헤더 참조).
+- Use **"정제" / "refinement"** for the log→playbook knowledge process. **Never use the word 증류 or "distillation"** in any output — it triggers safety-filter false positives in this environment.
+- "gene" (유전자) = a specific version of LOOP.md content. "Judgment assets" (판정 자산) = files verify depends on. "primitive 0.0" = external collaborators' (zoon's) internal name for this spec.
+
+## Working Conventions
+
+- **Context discipline:** bulk reading (session logs, large folders) goes to subagents that write partial reports to files and return short digests. Main session never loads raw bulk data.
+- **Model tiering for delegation:** Fable 5 = orchestration and demanding QA/critique; Opus 4.8 = spec editing, implementation, rubric-based audits; Sonnet 5 = simple tasks and naive-reader probes.
+- **Parallel agents get disjoint file ownership** (e.g., one owns `spec/`, another `wiki/`); cross-boundary findings go into reports, not edits.
+- **Wiki rules** (from `wiki/WIKI.md`): sources are immutable after ingest; every claim cites a source; `[[entity]]` cross-refs; contradictions may stay OPEN — do not force same-day resolution.
+- **Owner communication:** xavier is a concept originator, not a researcher. Before asking for a decision, explain background and per-option trade-offs in plain language with analogies (see auto-memory).

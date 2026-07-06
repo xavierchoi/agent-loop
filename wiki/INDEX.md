@@ -1,6 +1,6 @@
 # Loop.md Wiki Index
 
-> 스키마: [WIKI.md](WIKI.md) · 최종 갱신: 2026-07-06 (Ingest 004)
+> 스키마: [WIKI.md](WIKI.md) · 최종 갱신: 2026-07-06 (Ingest 005)
 
 ## 엔티티 그래프
 
@@ -18,12 +18,17 @@
    └── [[evolution-substrate]] ──── 가중치 vs 컨텍스트 진화 (AReaL 2.0)
 
 반대 증거·종합 축 (Ingest 004):
-   ├── [[self-improvement-failure-modes]] ── 실패 모드 목록 (loopy-era의 시험대)
-   ├── [[loop-economics]] ────────────────── 경제성 논제 대차대조표 (조건부 성립)
+   ├── [[self-improvement-failure-modes]] ── 실패 모드 목록 (loopy-era의 시험대) +Goodhart 실전사례
+   ├── [[loop-economics]] ────────────────── 경제성 논제 대차대조표 (조건부 성립) +n=1 실측
    ├── [[ratcheting-quality-gates]] ──────── 래칫의 산업 선례 (Notion)
    └── [[file-standard-adoption]] ────────── 파일 표준의 생사 조건 (소비자 선행)
 
+첫 내부 필드 런 축 (Ingest 005, n=1 실측):
+   ├── [[proxy-validity]] ─────────────────── 판정의 두 축: 실행 독립성(A) vs 프록시 타당성(B)
+   └── [[human-reignited-micro-loop]] ──────── 실전 패턴: 1-iter 마이크로 루프 + 인간 재점화·래칫
+
 ✅ 해소된 모순: [[greedy-vs-archive]] (스펙 결정: 선형+parent 예약) · [[harness-automation-tension]] (층위 이동)
+⚠️ OPEN 모순: 003 자율 폐쇄 vs 인간 재점화 ([[loopy-era]] ↔ [[human-reignited-micro-loop]], 도메인 한정 여부 미결)
 ```
 
 ## 엔티티 목록
@@ -45,6 +50,8 @@
 | [loop-economics](entities/loop-economics.md) | 경제성 논제 대차대조표 — 조건부 성립 | §7.5–7.6, budget 기준점 |
 | [ratcheting-quality-gates](entities/ratcheting-quality-gates.md) | 래칫의 산업 선례 (Notion ESLint) | §7.3–7.4 실증 |
 | [file-standard-adoption](entities/file-standard-adoption.md) | 파일 표준의 생사 = 소비자 선행 | §6 Level 0, 채택 전략 |
+| [proxy-validity](entities/proxy-validity.md) | 판정의 두 축: 실행 독립성 vs 프록시 타당성 | §4.2.5 축A만 커버, v0.5 #3·#4 |
+| [human-reignited-micro-loop](entities/human-reignited-micro-loop.md) | 실전 패턴: 인간 재점화 마이크로 루프 + 런 간 래칫 | v0.5 #1·#5·#6 |
 
 ## 모순 (Contradictions)
 
@@ -52,6 +59,7 @@
 |---|---|---|
 | [001-greedy-vs-archive](contradictions/001-greedy-vs-archive.md) | greedy vs 아카이브 탐색 — 이력 보존/계보 분기 구분으로 축소, 스펙 결정(선형+parent)으로 해소 | **RESOLVED** (v0.3 재검토 이관) |
 | [002-harness-automation-tension](contradictions/002-harness-automation-tension.md) | "하네스는 인간 스킬" vs "하네스도 자동 최적화" — 층위 이동으로 재정의 | RESOLVED |
+| [003-autonomous-vs-human-reignited](contradictions/003-autonomous-vs-human-reignited.md) | "루프를 스스로 닫는다" vs "인간이 재점화" — 반례인지 taste-도메인 한정인지 미결 | **OPEN** (n≥2 대기) |
 
 `[[greedy-vs-archive]]`·`[[harness-automation-tension]]` 링크는 해당 모순 문서로 해석한다.
 
@@ -68,6 +76,7 @@
 | [Meta-Harness (arXiv 2603.28052)](sources/2026-meta-harness.md) | 논문 | 003 |
 | [LOOP.md 딥리서치 1차](sources/2026-loopmd-deep-research-round1.md) | 내부 리포트 (3표 검증) | 004 |
 | [LOOP.md 딥리서치 2차](sources/2026-loopmd-deep-research-round2.md) | 내부 리포트 (3표 검증) | 004 |
+| [필드 런 moneta-live-ui](sources/2026-field-run-moneta.md) | **내부 실측 (필드 런, n=1)** | 005 |
 
 ## 스펙 v0.2 검토 후보 — 처리 완료 (소유자 결정 2026-07-06)
 
@@ -83,6 +92,7 @@
 
 ## 최근 변경
 
+- 2026-07-06 · [Ingest 005](summaries/2026-07-06-ingest-005.md): **첫 내부 필드 런(moneta-live-ui, n=1)** 소화 — 엔티티 2 신규(proxy-validity·human-reignited-micro-loop), loop-economics·self-improvement-failure-modes 실측 갱신, **모순 003 OPEN**(자율 폐쇄 vs 인간 재점화), 첫 정기 Lint([meta/lint-20260706](meta/lint-20260706.md)) 클린
 - 2026-07-06 · [Ingest 004](summaries/2026-07-06-ingest-004.md): 내부 딥리서치 1·2차 소화 — **반대 증거 축 신설**, 엔티티 4 신규, **모순 001 해소(스펙 결정)**, v0.2 후보 7건 처리 완료
 - 2026-07-06 · [Ingest 003](summaries/2026-07-06-ingest-003.md): Meta-Harness 소화 — §5.3 실행 모델의 정면 실증, 모순 002 발견 즉시 해소, v0.2 후보 +1
 - 2026-07-06 · [Ingest 002](summaries/2026-07-06-ingest-002.md): Sakana 3부작 소화, 엔티티 3 신규, **첫 모순 발견(greedy vs archive)**, v0.2 후보 +2
@@ -90,5 +100,5 @@
 
 ## 통계
 
-- 소스: 9 · 엔티티: 15 · 요약: 4 · 모순: 2 (미해결 **0**, 해소 2)
-- 다음 Lint 예정: Ingest 005 후
+- 소스: 10 · 엔티티: 17 · 요약: 5 · 모순: 3 (미해결 **1** [003 OPEN], 해소 2)
+- Lint: [meta/lint-20260706](meta/lint-20260706.md) (Ingest 005 후) — 클린. 다음 예정: Ingest 010 후 또는 수동

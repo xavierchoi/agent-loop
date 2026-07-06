@@ -35,4 +35,4 @@ LOOP.md 표준은 "오케스트레이션 스킬"을 **파일 포맷으로 물화
 
 ## 상호참조
 
-[[loopy-era]] · [[autoresearch]] · [[meta-harness]] · [[harness-automation-tension]]
+[[loopy-era]] · [[autoresearch]] · [[meta-harness]] · [[harness-automation-tension]] · [[human-reignited-micro-loop]] (실전 확증: 재점화·래칫까지 인간 몫으로 관측된 n=1)

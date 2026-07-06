@@ -21,4 +21,4 @@
 
 ## 상호참조
 
-[[mutation-surface]] · [[darwin-goedel-machine]] (게이트가 함께 필요한 이유) · [[self-improvement-failure-modes]]
+[[mutation-surface]] · [[darwin-goedel-machine]] (게이트가 함께 필요한 이유) · [[self-improvement-failure-modes]] · [[human-reignited-micro-loop]] (필드 사례: taste 도메인에선 강화 자체가 인간 수동)

@@ -23,4 +23,4 @@
 
 ## 상호참조
 
-[[autoresearch]] · [[fixed-time-budget]]
+[[autoresearch]] · [[fixed-time-budget]] · [[proxy-validity]] (Goodhart 주의점의 실전 확증 — taste 프록시가 목표를 배신한 n=1)
