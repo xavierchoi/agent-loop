@@ -1,0 +1,39 @@
+{
+  "id": "single-root-cause-per-iteration",
+  "status": "rule",
+  "insight": "한 iteration에 정확히 하나의 독립적 root cause만 고치면 회귀 없이 score가 매 iteration마다 일정하게 수렴하고 이전에 고친 부분이 재손상되지 않는다.",
+  "preconditions": "여러 개의 독립적인 실패 원인이 남아있고 verify가 실패 개수에 비례하는 score(또는 pass/fail)를 제공할 때",
+  "episodes": 3,
+  "evidence": [
+    {
+      "run-id": "2026-07-06T05-19-05-829Z",
+      "iteration": 1
+    },
+    {
+      "run-id": "2026-07-06T05-19-05-829Z",
+      "iteration": 2
+    },
+    {
+      "run-id": "2026-07-06T05-30-14-316Z",
+      "iteration": 1
+    },
+    {
+      "run-id": "2026-07-06T05-30-14-316Z",
+      "iteration": 2
+    },
+    {
+      "run-id": "2026-07-06T05-47-11-080Z",
+      "iteration": 1
+    },
+    {
+      "run-id": "2026-07-06T05-47-11-080Z",
+      "iteration": 2
+    },
+    {
+      "run-id": "2026-07-06T05-47-11-080Z",
+      "iteration": 3
+    }
+  ],
+  "match": "(수정|고침|고쳐|반환하도록|계산하도록)",
+  "refined-at": "2026-07-06T05:50:53.874Z"
+}

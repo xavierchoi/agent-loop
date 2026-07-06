@@ -1,0 +1,8 @@
+{
+  "version": "v1",
+  "parent": "v0",
+  "timestamp": "2026-07-06T05:50:53.874Z",
+  "loop-md-sha256": "0e1f4df45213",
+  "free-marker": "strategy",
+  "note": "정제로 학습한 전략을 FREE 블록에 반영 (§7.3)"
+}

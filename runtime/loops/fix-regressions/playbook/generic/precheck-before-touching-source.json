@@ -1,0 +1,10 @@
+{
+  "id": "precheck-before-touching-source",
+  "status": "heuristic",
+  "insight": "수정을 시작하기 전에 pre-check verify를 먼저 실행해 이미 통과 상태인지 확인하면 불필요한 작업과 회귀 위험을 피할 수 있다.",
+  "preconditions": "루프 시작 시점, 또는 이전 실행에서 이미 수정이 반영되어 있을 가능성이 있을 때",
+  "episodes": 0,
+  "evidence": [],
+  "match": "pre-check",
+  "refined-at": "2026-07-06T05:50:53.874Z"
+}

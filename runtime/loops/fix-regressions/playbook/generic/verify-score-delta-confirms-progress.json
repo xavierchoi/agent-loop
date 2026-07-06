@@ -1,0 +1,10 @@
+{
+  "id": "verify-score-delta-confirms-progress",
+  "status": "heuristic",
+  "insight": "수정 직후 score가 이전 iteration 대비 개선되었는지 확인해, 개선되지 않았다면 해당 수정 가설을 즉시 폐기하고 다른 원인을 조사해야 한다.",
+  "preconditions": "verify가 숫자 score를 반환하고 동일 gene에 대해 여러 iteration의 이력을 비교할 수 있을 때",
+  "episodes": 0,
+  "evidence": [],
+  "match": "\"score\":-?\\d",
+  "refined-at": "2026-07-06T05:50:53.874Z"
+}
