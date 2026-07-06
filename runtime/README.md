@@ -1,5 +1,7 @@
 # looprun — Agent Loops (LOOP.md) 레퍼런스 러너 킷
 
+> **사람에게 가장 쉬운 시작:** YAML을 직접 쓰지 마라. `../skills/loop-authoring/`(Agent Skills 규격)을 에이전트에 설치하고 *"~하는 루프 만들어줘"* 라고 말하면, 에이전트가 목표 협상 → LOOP.md 작성 → 실행까지 대신한다.
+
 Agent Loops 명세 v0.4(`../spec/SPECIFICATION.md`)의 Level 1 레퍼런스 러너 + Evolution(정제) 실험 스크립트 + 데모 세트. **단일 파일, 외부 의존성 0** — Node.js만 있으면 어디서나 돈다.
 
 ## 요구 사항 (서버/새 환경)
